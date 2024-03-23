@@ -1,0 +1,129 @@
+C:\laragon\www
+λ cd Tarea3
+
+C:\laragon\www\Tarea3
+λ php artisan serve
+Starting Laravel development server: http://127.0.0.1:8000
+[Fri Mar 22 23:11:04 2024] PHP 7.4.33 Development Server (http://127.0.0.1:8000) started
+[Fri Mar 22 23:11:26 2024] 127.0.0.1:53661 Accepted
+[Fri Mar 22 23:11:26 2024] 127.0.0.1:53662 Accepted
+[Fri Mar 22 23:11:26 2024] 127.0.0.1:53661 Closing
+[Fri Mar 22 23:11:27 2024] 127.0.0.1:53662 [200]: GET /favicon.ico
+[Fri Mar 22 23:11:27 2024] 127.0.0.1:53662 Closing
+^C
+C:\laragon\www\Tarea3
+λ php artisan make:migration camion
+Created Migration: 2024_03_23_051624_camion
+
+C:\laragon\www\Tarea3
+λ php artisan make:migration transporte
+Created Migration: 2024_03_23_051655_transporte
+
+C:\laragon\www\Tarea3
+λ php artisan make:migration marca
+Created Migration: 2024_03_23_051712_marca
+
+C:\laragon\www\Tarea3
+λ php artisan migrate:fresh
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) (SQL: SHOW FULL TABLES WHERE table_type = 'BASE TABLE')
+
+  at C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\Connection.php:712
+    708▕         // If an exception occurs when attempting to run a query, we'll format the error
+    709▕         // message to include the bindings with SQL, which will make this exception a
+    710▕         // lot more helpful to the developer instead of just the database's errors.
+    711▕         catch (Exception $e) {
+  ➜ 712▕             throw new QueryException(
+    713▕                 $query, $this->prepareBindings($bindings), $e
+    714▕             );
+    715▕         }
+    716▕     }
+
+  1   C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:70
+      PDOException::("SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)")
+
+  2   C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:70
+      PDO::__construct("mysql:host=127.0.0.1;port=3306;dbname=laravel", "root", "", [])
+
+C:\laragon\www\Tarea3
+λ php artisan migrate:fresh
+
+   InvalidArgumentException
+
+  Database connection [Tarea3] not configured.
+
+  at C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php:161
+    157▕         // If the configuration doesn't exist, we'll throw an exception and bail.
+    158▕         $connections = $this->app['config']['database.connections'];
+    159▕
+    160▕         if (is_null($config = Arr::get($connections, $name))) {
+  ➜ 161▕             throw new InvalidArgumentException("Database connection [{$name}] not configured.");
+    162▕         }
+    163▕
+    164▕         return (new ConfigurationUrlParser)
+    165▕                     ->parseConfiguration($config);
+
+  1   C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php:124
+      Illuminate\Database\DatabaseManager::configuration("Tarea3")
+
+  2   C:\laragon\www\Tarea3\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php:95
+      Illuminate\Database\DatabaseManager::makeConnection("Tarea3")
+
+C:\laragon\www\Tarea3
+λ php artisan migrate:fresh
+Dropped all tables successfully.
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (85.93ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (47.14ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (48.44ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (67.37ms)
+Migrating: 2024_03_23_051624_camion
+Migrated:  2024_03_23_051624_camion (21.53ms)
+Migrating: 2024_03_23_051655_transporte
+Migrated:  2024_03_23_051655_transporte (0.05ms)
+Migrating: 2024_03_23_051712_marca
+Migrated:  2024_03_23_051712_marca (0.07ms)
+
+C:\laragon\www\Tarea3
+λ php artisan migrate:fresh
+Dropped all tables successfully.
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (56.02ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (53.40ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (53.41ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (82.61ms)
+Migrating: 2024_03_23_051624_camion
+Migrated:  2024_03_23_051624_camion (29.18ms)
+Migrating: 2024_03_23_051655_transporte
+Migrated:  2024_03_23_051655_transporte (26.34ms)
+Migrating: 2024_03_23_051712_marca
+Migrated:  2024_03_23_051712_marca (0.16ms)
+
+C:\laragon\www\Tarea3
+λ php artisan migrate:fresh
+Dropped all tables successfully.
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (42.73ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (126.23ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (129.68ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (206.85ms)
+Migrating: 2024_03_23_051624_camion
+Migrated:  2024_03_23_051624_camion (39.35ms)
+Migrating: 2024_03_23_051655_transporte
+Migrated:  2024_03_23_051655_transporte (23.59ms)
+Migrating: 2024_03_23_051712_marca
+Migrated:  2024_03_23_051712_marca (28.85ms)
